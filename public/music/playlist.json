@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "title": "anoちゅ多様性Music Video",
+      "artist": "Artista A",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5780b88f7f286b5dee1e241d2bca5d0f/0x1900-000000-80-0-0.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 2,
+      "title": "Aquarium Park (Act 1) - Sonic Colors [OST]",
+      "artist": "Artista B",
+      "cover": "https://i1.sndcdn.com/artworks-000271732910-66gc2u-t500x500.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Caravan Palace - Aftermath",
+      "artist": "Caravan Palace",
+      "cover": "https://i.ytimg.com/vi/imCd-m32oAs/mqdefault.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Kyary Pamyu Pamyu - Kimino Mikata(きゃりーぱみゅぱみゅ - きみのみかた) Official Music Video",
+      "artist": "Kyary Pamyu Pamyu",
+      "cover": "https://i.ytimg.com/vi/TWxrIblJHO0/maxresdefault.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 5,
+      "title": "Kyary Pamyu Pamyu - OTO NO KUNI Official Music Video",
+      "artist": "Kyary Pamyu Pamyu",
+      "cover": "https://nexusstudios.com/app/uploads/2020/10/NexusStudios_OtoNoKuni_FantasistaUtamaro_Stiils_6.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 6,
+      "title": "Moe Shop - Fantasy (w MONICO)",
+      "artist": "Moe Shop",
+      "cover": "https://i1.sndcdn.com/artworks-000316901838-oqxutn-t500x500.jpg"
+    },
+    {
+      "id": 7,
+      "title": "The Music",
+      "artist": "Capsule",
+      "cover": "https://images.genius.com/494a4de01841564a20500a129ec5e8f8.998x1000x1.jpg",
+      "genre": "J-POP"
+    }
+  ]
