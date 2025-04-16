@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function Player({ audioRef, currentSongId, showPreview, setShowPreview, isPlaying, setIsPlaying }) {
+function Player({ musicList, audioRef, currentSongId, showPreview, setShowPreview, isPlaying, setIsPlaying }) {
 
     const [currentTime, setCurrentTime] = useState(0)
 
@@ -53,7 +53,7 @@ function Player({ audioRef, currentSongId, showPreview, setShowPreview, isPlayin
     }
 
     const [muteClicked, setMuteClicked] = useState(false)
-    const [volume, setVolume] = useState()
+    const [volume, setVolume] = useState(1)
 
     const handleVolumeBar = (newVolume) => {
         setVolume(newVolume)
@@ -75,35 +75,36 @@ function Player({ audioRef, currentSongId, showPreview, setShowPreview, isPlayin
 
     return (
         <footer className='player'>
-            <div>
-                <img src="" alt=""/>
-                <div>
-                    <b>Nombre de la cancion</b>
-                    <p>Nombre del artista</p>
-                </div>
+            <div className="player__progress">
+                <input
+                    type="range"
+                    value={currentTime}
+                    max={audioRef.current?.duration || 0}
+                    onChange={handleTimeBar}
+                />
             </div>
-            <div className="player__info">
+            <div className='player__container'>
                 <div className="player__controls">
                     <i className="fa-solid fa-backward-step"></i>
                     {isPlaying ? <i className="fa-solid fa-pause" onClick={handlePlay}></i> : <i className="fa-solid fa-play" onClick={handlePlay}></i>}
                     <i className="fa-solid fa-step-forward"></i>
+                    <div className='player__controls-duration'>
+                        <span>{formatTime(currentTime)}</span> / <span>{duration ? formatTime(duration) : '0:00'}</span>
+                    </div>
                 </div>
-                <div className="player__progress">
-                    <span>{formatTime(currentTime)}</span>
-                    <input
-                        type="range"
-                        value={currentTime}
-                        max={audioRef.current?.duration || 0}
-                        onChange={handleTimeBar}
-                    />
-                    <span>{duration ? formatTime(duration) : '0:00'}</span>
+                <div className="player__info">
+                    <img src={musicList[currentSongId-1].cover} alt="" className='player__info-cover'/>
+                    <div className='player__info-title'>
+                        <b>{musicList[currentSongId-1].title}</b>
+                        <span>{musicList[currentSongId-1].artist}</span>
+                    </div>
                 </div>
-            </div>
-            <div className="player__controls">
-                <input type="range" value={volume} min='0' max='1' step='0.1' onChange={(e) => handleVolumeBar(e.target.value)}/>
-                <i className="fa-solid fa-volume-high" onClick={handleMuteButton}></i>
-                <i className="fa-solid fa-random"></i>
-                <i className="fa-solid fa-chevron-up" onClick={() => {setShowPreview(!showPreview)}}></i>
+                <div className="player__controls">
+                    <input type="range" value={volume} min='0' max='1' step='0.1' onChange={(e) => handleVolumeBar(e.target.value)}/>
+                    <i className="fa-solid fa-volume-high" onClick={handleMuteButton}></i>
+                    <i className="fa-solid fa-random"></i>
+                    <i className="fa-solid fa-chevron-up" onClick={() => {setShowPreview(!showPreview)}}></i>
+                </div>
             </div>
         </footer>
     )

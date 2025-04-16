@@ -132,9 +132,9 @@ function App() {
             </div>
           </section>      
         </main>
-        {currentSongId && <Preview musicList={musicList} showPreview={showPreview} currentSongId={currentSongId} audioRef={audioRef} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
+        {currentSongId && <Preview musicList={musicList} showPreview={showPreview} currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
 
-        <Player currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} showPreview={showPreview} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+        {currentSongId && <Player musicList={musicList} currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} showPreview={showPreview} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
       </div>
     </>
   )

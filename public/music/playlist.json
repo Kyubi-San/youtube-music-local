@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "anoちゅ多様性Music Video",
-      "artist": "Artista A",
+      "artist": "ano",
       "cover": "https://cdn-images.dzcdn.net/images/cover/5780b88f7f286b5dee1e241d2bca5d0f/0x1900-000000-80-0-0.jpg",
       "genre": "J-POP"
     },
@@ -44,5 +44,47 @@
       "artist": "Capsule",
       "cover": "https://images.genius.com/494a4de01841564a20500a129ec5e8f8.998x1000x1.jpg",
       "genre": "J-POP"
-    }
+    },
+    {
+      "id": 8,
+      "title": "kyary pamyu pamyu - Mondai Girl(きゃりーぱみゅぱみゅ - もんだいガール) Official Music Video",
+      "artist": "Kyary Pamyu Pamyu",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/5cd42ba596c9878764ed428c075791e4/0x1900-000000-80-0-0.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 9,
+      "title": "Stay with You",
+      "artist": "Capsule",
+      "cover": "https://www.generasia.com/w/images/thumb/6/63/CAPSULE_WAVERUNNER.jpg/250px-CAPSULE_WAVERUNNER.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 10,
+      "title": "[Official Music Video] Perfumelove the world",
+      "artist": "Perfume",
+      "cover": "https://upload.wikimedia.org/wikipedia/en/e/e5/Lovetheworld.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 11,
+      "title": "anoスマイルあげないMusic Video",
+      "artist": "ano",
+      "cover": "https://www.tbwahakuhodo.co.jp/uploads/2023/08/230809_McD_th_ogimage_work.png",
+      "genre": "J-POP"
+    }, 
+    {
+      "id": 12,
+      "title": "Space Telephone",
+      "artist": "Perfume",
+      "cover": "https://i.ytimg.com/vi/UC0MONDSCuE/maxresdefault.jpg",
+      "genre": "J-POP"
+    },
+    {
+      "id": 13,
+      "title": "チェリーボンボン - Cherrybonbon",
+      "artist": "Kyary Pamyu Pamyu",
+      "cover": "https://i1.sndcdn.com/artworks-7dKWnHnjQvTh-0-t500x500.jpg",
+      "genre": "J-POP"
+    }  
   ]
