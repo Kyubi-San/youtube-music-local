@@ -1,6 +1,5 @@
-function PlaylistItem({ audioRef, isPlaying, setIsPlaying, setShowPreview, currentSongId, setCurrentSongId, id, cover, title, artist }) {
+function PlaylistItem({ audio, isPlaying, setPlaylistIndex, index, setIsPlaying, currentSongId, setCurrentSongId, id, cover, title, artist }) {
 
-    const audio = audioRef.current
 
     const handlePlay = () => {
         if (currentSongId !== id) {
@@ -9,7 +8,7 @@ function PlaylistItem({ audioRef, isPlaying, setIsPlaying, setShowPreview, curre
           audio.play()
           setCurrentSongId(id)
           setIsPlaying(true)
-          setShowPreview(true)
+          setPlaylistIndex(index)
         } else {
           if (isPlaying) {
             audio.pause()

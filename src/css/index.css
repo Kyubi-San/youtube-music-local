@@ -160,7 +160,6 @@ body {
 .listen-again__description-title h2 {
   font-size: 2em;
   color: white;
-
 }
 
 .listen-again__description-title h2, .listen-again__description-title h3 {
@@ -190,43 +189,50 @@ body {
 }
 
 .music-list {
-  display: flex;
-  width: 100%;
-  max-width: 80vw; /* Limita la anchura máxima al 100% del ancho de la ventana */
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  max-width: 80vw;
   position: relative;
-  overflow-x: auto; /* Habilita el desplazamiento horizontal */
-  scroll-behavior: smooth; /* Desplazamiento suave */
-  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1em;
   padding: 1em 0;
 }
 
 .music-list::-webkit-scrollbar {
-  height: 12px; /* Altura de la barra de desplazamiento */
+  height: 12px;
 }
 
 .music-list::-webkit-scrollbar-thumb {
-  background: #888; /* Color del pulgar de la barra de desplazamiento */
+  background: #888;
   border-radius: 10px;
 }
 
 .music-list::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color del pulgar al pasar el mouse */
+  background: #555;
 }
 
 .music-card {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-right: 1em;
+  margin-right: 14px;
   border-radius: 10px;
   text-align: left;
   min-width: 250px;
-  max-width: 250px;
+  overflow-y: hidden;
+  max-height: 300px;
+}
+
+.music-card:last-child {
+  margin-right: 0;
 }
 
 .music-card__photo {
   border-radius: 10px;
-  height: 180px;
+  height: 60%;
+  width: 100%;
   position: relative;
   cursor: pointer;
   user-select: none;
@@ -275,6 +281,8 @@ body {
 .music-card__description {
   color: white;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Footer */

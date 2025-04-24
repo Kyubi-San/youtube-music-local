@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 
 function Player({ musicList, audioRef, currentSongId, showPreview, setShowPreview, isPlaying, setIsPlaying }) {
 
+    const currentSong = musicList.find(song => song.id === currentSongId)
+
     const [currentTime, setCurrentTime] = useState(0)
 
     useEffect(() => {
@@ -93,10 +95,10 @@ function Player({ musicList, audioRef, currentSongId, showPreview, setShowPrevie
                     </div>
                 </div>
                 <div className="player__info">
-                    <img src={musicList[currentSongId-1].cover} alt="" className='player__info-cover'/>
+                    <img src={currentSong.cover} alt="" className='player__info-cover'/>
                     <div className='player__info-title'>
-                        <b>{musicList[currentSongId-1].title}</b>
-                        <span>{musicList[currentSongId-1].artist}</span>
+                        <b>{currentSong.title}</b>
+                        <span>{currentSong.artist}</span>
                     </div>
                 </div>
                 <div className="player__controls">

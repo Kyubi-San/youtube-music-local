@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch('music/playlist.json')
       .then(response => response.json())
-      .then(data => setMusicList(data))
+      .then(data => setMusicList(data.sort(() => Math.random() - 0.5)))
   }, [])
 
   const [currentSongId, setCurrentSongId] = useState(null)
@@ -71,6 +71,10 @@ function App() {
               <span>Actualizar</span>
             </a>
           </nav>
+          <ul>
+            <li>Nueva playlist</li>
+            Streams
+          </ul>
         </aside>
         <main className='main'>
           <section className='categories'>
@@ -108,29 +112,6 @@ function App() {
               }             
             </div>
           </section>
-          <section className='listen-again'>
-            <div className='listen-again__description'>
-              <img src="https://yt3.ggpht.com/uo5-N_ghMbDhFljWrYiBrDrlDKMu4B6JnCmjAp_h1kR0FsiPTpEwQW3YYscxwh7axBVKc7qUka4=s88-c-k-c0x00ffffff-no-rj" alt="" className='listen-again__description-photo'/>
-              <div className='listen-again__description-title'>
-                <h3>Kyubi-San</h3>
-                <h2>Volver a escuchar</h2>
-              </div>
-              <div className='listen-again__description-buttons'>
-                <span onClick={handleDeployPreview}>mas</span>
-                <i className="fa-solid fa-chevron-left" onClick={handleScrollLeft}></i>
-                <i className="fa-solid fa-chevron-right" onClick={handleScrollRight}></i>
-              </div>
-            </div>
-            <div className='music-list' ref={musicListRef}>
-              {
-              musicList.map((val) => {
-                return (
-                  <MusicCard key={val.id} id={val.id} title={val.title} artist={val.artist} cover={val.cover} href={val.title} setCurrentSongId={setCurrentSongId} currentSongId={currentSongId} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-                )
-              })
-              }             
-            </div>
-          </section>      
         </main>
         {currentSongId && <Preview musicList={musicList} showPreview={showPreview} currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
 

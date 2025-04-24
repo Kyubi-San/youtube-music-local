@@ -4,12 +4,6 @@ function MusicCard({ id, title, artist, cover, href, audioRef, currentSongId, se
 
   const audio = audioRef.current
   
-  useEffect(() => {
-    audioRef.current.addEventListener('ended', () => {
-      setIsPlaying(false)
-    })
-  })
-
   const handlePlay = () => {
     if (currentSongId !== id) {
       audio.id = id
@@ -37,7 +31,7 @@ function MusicCard({ id, title, artist, cover, href, audioRef, currentSongId, se
       </picture> 
       <div className='music-card__description'>
         <b>{title}</b> 
-        <p>{artist}</p>
+        <span>{artist}</span>
       </div>
     </div>
   )
