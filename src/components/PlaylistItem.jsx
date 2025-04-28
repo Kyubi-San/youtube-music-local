@@ -1,4 +1,4 @@
-function PlaylistItem({ audio, isPlaying, setPlaylistIndex, index, setIsPlaying, currentSongId, setCurrentSongId, id, cover, title, artist }) {
+function PlaylistItem({ audio, musicListFiltered, isPlaying, currentSong, setCurrentSong, setPlaylistIndex, index, setIsPlaying, currentSongId, setCurrentSongId, id, cover, title, artist }) {
 
 
     const handlePlay = () => {
@@ -6,9 +6,9 @@ function PlaylistItem({ audio, isPlaying, setPlaylistIndex, index, setIsPlaying,
           audio.id = id
           audio.src = `../music/${title}.mp3`
           audio.play()
-          setCurrentSongId(id)
           setIsPlaying(true)
           setPlaylistIndex(index)
+          setCurrentSong(musicListFiltered.find(song => song.id === id))
         } else {
           if (isPlaying) {
             audio.pause()
@@ -21,7 +21,7 @@ function PlaylistItem({ audio, isPlaying, setPlaylistIndex, index, setIsPlaying,
     }
 
     return (
-        <li className={`preview__playlist-item ${currentSongId === id && 'preview__playlist-item--active'}`}>
+        <li className={`preview__playlist-item ${currentSong.id === id && 'preview__playlist-item--active'}`}>
             <div onClick={handlePlay}>
                 <img src={cover} alt={title} className="preview__playlist-item-cover"/>
                 <div className="preview__playlist-item-data">

@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react'
 
-function MusicCard({ id, title, artist, cover, href, audioRef, currentSongId, setCurrentSongId, setShowPreview, isPlaying, setIsPlaying }) {
+function MusicCard({ id, musicList, title, artist, cover, href, audioRef, currentSong, setCurrentSong, isPlaying, setIsPlaying, generatePlayList }) {
 
   const audio = audioRef.current
   
   const handlePlay = () => {
-    if (currentSongId !== id) {
+    if (currentSong?.id !== id) {
       audio.id = id
       audio.src = `../music/${href}.mp3`
       audio.play()
-      setCurrentSongId(id)
       setIsPlaying(true)
-      setShowPreview(true)
+      const thisSong = musicList.find(song => song.id === id)
+      setCurrentSong(thisSong)
+      generatePlayList(thisSong)
     } else {
       if (isPlaying) {
         audio.pause()
@@ -25,8 +26,8 @@ function MusicCard({ id, title, artist, cover, href, audioRef, currentSongId, se
 
   return (
     <div className="music-card">
-      <picture className={`music-card__photo ${currentSongId == id ? 'music-card__photo--playing' : ''}`} onClick={handlePlay}>
-        {isPlaying && currentSongId == id ? <i className="fa-solid fa-pause"></i> : <i className="fa-solid fa-play"></i>}
+      <picture className={`music-card__photo ${currentSong?.id == id ? 'music-card__photo--playing' : ''}`} onClick={handlePlay}>
+        {isPlaying && currentSong?.id == id ? <i className="fa-solid fa-pause"></i> : <i className="fa-solid fa-play"></i>}
         <img src={cover} alt="Album cover" />
       </picture> 
       <div className='music-card__description'>

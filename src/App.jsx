@@ -13,7 +13,7 @@ function App() {
       .then(data => setMusicList(data.sort(() => Math.random() - 0.5)))
   }, [])
 
-  const [currentSongId, setCurrentSongId] = useState(null)
+  const [playlistIndex, setPlaylistIndex] = useState(0)
 
   const musicListRef = useRef(null)
 
@@ -21,7 +21,7 @@ function App() {
     if (musicListRef.current) {
       musicListRef.current.scrollBy({
         top: 0,
-        left: -500,
+        left: -700,
         behavior: "smooth"
       });
     }
@@ -31,7 +31,7 @@ function App() {
     if (musicListRef.current) {
       musicListRef.current.scrollBy({
         top: 0,
-        left: 500,
+        left: 700,
         behavior: "smooth"
       });
     }
@@ -44,13 +44,43 @@ function App() {
   }
 
   const [isPlaying, setIsPlaying] = useState(false)
+  const [musicListFiltered, setMusicListFiltered] = useState([])
+  const [currentSong, setCurrentSong] = useState(null)
+
+  const generatePlayList = (thisSong) => {
+    const currentSongGenre = thisSong?.genre
+    const currentSong = musicList.filter(song => song.id === thisSong.id)
+    const matchingGenre = musicList.filter(song => song.genre === currentSongGenre && song.id != thisSong.id)
+    const otherGenre = musicList.filter(song => song.genre !== currentSongGenre).slice(0, 10)
+    setMusicListFiltered([...currentSong, ...matchingGenre, ...otherGenre])
+    setShowPreview(true)
+  }
+  
+  const musicListProps = {
+    musicList: musicList,
+    musicListFiltered: musicListFiltered,
+    setMusicListFiltered: setMusicListFiltered,
+    playlistIndex: playlistIndex,
+    setPlaylistIndex: setPlaylistIndex,
+    showPreview: showPreview, 
+    audioRef: audioRef, 
+    setShowPreview: setShowPreview, 
+    isPlaying: isPlaying,
+    setIsPlaying: setIsPlaying,
+    currentSong: currentSong,
+    setCurrentSong: setCurrentSong,
+    generatePlayList: generatePlayList
+  }
 
   return (
     <>
       <div className='container'>
         <header className='header'>
           <i className="fa-solid fa-bars"></i>
-          <input type="text" name="" id="" />
+          <div className='header__search'>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="" id="" className='header__searchbar' placeholder="Buscar canciones, álbumes, artistas o podcasts"/>
+          </div>
         </header>
         <aside className='sidebar'>
           <nav className='sidebar__nav'>
@@ -104,18 +134,18 @@ function App() {
             </div>
             <div className='music-list' ref={musicListRef}>
               {
-              musicList.map((val) => {
+              musicList.slice(0, 10).map((val) => {
                 return (
-                  <MusicCard key={val.id} id={val.id} title={val.title} artist={val.artist} cover={val.cover} href={val.title} setCurrentSongId={setCurrentSongId} currentSongId={currentSongId} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
+                  <MusicCard key={val.id} id={val.id} title={val.title} artist={val.artist} cover={val.cover} href={val.title} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying} generatePlayList={generatePlayList} currentSong={currentSong} setCurrentSong={setCurrentSong} musicList={musicList}/>
                 )
               })
               }             
             </div>
           </section>
         </main>
-        {currentSongId && <Preview musicList={musicList} showPreview={showPreview} currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
+        {currentSong && <Preview {...musicListProps}/>}
 
-        {currentSongId && <Player musicList={musicList} currentSongId={currentSongId} setCurrentSongId={setCurrentSongId} audioRef={audioRef} showPreview={showPreview} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}
+        {currentSong && <Player {...musicListProps}/>}
       </div>
     </>
   )

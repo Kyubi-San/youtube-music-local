@@ -1,22 +1,9 @@
 import { useState, useEffect } from "react"
 import PlaylistItem from "./PlaylistItem"
 
-function Preview({ setShowPreview, showPreview, currentSongId, setCurrentSongId, audioRef, musicList, isPlaying, setIsPlaying}) {
+function Preview({  musicListFiltered, currentSong, playlistIndex, setPlaylistIndex, setShowPreview, showPreview, currentSongId, setCurrentSongId, audioRef, isPlaying, setIsPlaying, setCurrentSong }) {
 
-    const currentSong = musicList.find(song => song.id === currentSongId)
-
-    const [playlistIndex, setPlaylistIndex] = useState(0)
     const audio = audioRef.current
-
-    const [musicListFiltered, setMusicListFiltered] = useState([])
-
-    useEffect(() => {
-        const currentSongGenre = currentSong?.genre
-        const thisSong = musicList.filter(song => song.id === currentSongId)
-        const matchingGenre = musicList.filter(song => song.genre === currentSongGenre && song.id != currentSongId)
-        const otherGenre = musicList.filter(song => song.genre !== currentSongGenre).slice(0, 10)
-        setMusicListFiltered([...thisSong, ...matchingGenre, ...otherGenre])
-    }, [])
 
     useEffect(() => {
         audio.addEventListener('ended', handleSongEnd)
@@ -47,7 +34,7 @@ function Preview({ setShowPreview, showPreview, currentSongId, setCurrentSongId,
     return (
     <>
         {
-        currentSongId && showPreview
+        currentSong && showPreview
          ? 
         <div className='preview__container'>
             <div className="preview__media-container">
@@ -71,11 +58,12 @@ function Preview({ setShowPreview, showPreview, currentSongId, setCurrentSongId,
                         title={song.title}
                         artist={song.artist}
                         audio={audio}
-                        currentSongId={currentSongId}
-                        setCurrentSongId={setCurrentSongId}
                         isPlaying={isPlaying}
                         setIsPlaying={setIsPlaying}
                         setShowPreview={setShowPreview}
+                        currentSong={currentSong}
+                        setCurrentSong={setCurrentSong}
+                        musicListFiltered={musicListFiltered}
                     />
                     ))
                 }
@@ -83,7 +71,7 @@ function Preview({ setShowPreview, showPreview, currentSongId, setCurrentSongId,
             </div>
         </div>
         :
-        <div className={`${currentSongId && !showPreview ? 'preview__container--mini' : 'hidden'}`} onClick={handlePlay}>
+        <div className={`${currentSong.id && !showPreview ? 'preview__container--mini' : 'hidden'}`} onClick={handlePlay}>
             <img src={currentSong.cover} alt="" className="preview__img--mini"/>
         </div>
         }

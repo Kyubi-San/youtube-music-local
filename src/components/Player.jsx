@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function Player({ musicList, audioRef, currentSongId, showPreview, setShowPreview, isPlaying, setIsPlaying }) {
-
-    const currentSong = musicList.find(song => song.id === currentSongId)
+function Player({ musicListFiltered, playlistIndex, setPlaylistIndex, setShowPreview, currentSong, setCurrentSong, showPreview, audioRef, musicList, isPlaying, setIsPlaying }) {
 
     const [currentTime, setCurrentTime] = useState(0)
 
@@ -15,10 +13,26 @@ function Player({ musicList, audioRef, currentSongId, showPreview, setShowPrevie
     })
 
     useEffect(() => {
-        if (currentSongId !== null) {
+        if (currentSong !== null) {
             setIsPlaying(true)
         }
-    }, [currentSongId])
+    }, [currentSong])
+
+    const handlePreviousSongButton = () => {
+        const previousIndex = (playlistIndex - 1)
+        audioRef.current.src = `../music/${musicListFiltered[previousIndex].title}.mp3`
+        setCurrentSong(musicListFiltered[previousIndex])
+        setPlaylistIndex(previousIndex)
+        audioRef.current.play()
+    }
+
+    const handleNextButton = () => {
+        const nextIndex = (playlistIndex + 1) % musicListFiltered.length
+        audioRef.current.src = `../music/${musicListFiltered[nextIndex].title}.mp3`
+        setCurrentSong(musicListFiltered[nextIndex])
+        setPlaylistIndex(playlistIndex + 1)
+        audioRef.current.play()
+    }
 
     const handlePlay = () => {
         if (currentSongId !== null) {
@@ -64,6 +78,8 @@ function Player({ musicList, audioRef, currentSongId, showPreview, setShowPrevie
         }
     }
 
+    //  Silenciar al hacer click en el boton de volumen
+
     const handleMuteButton = () => {
         if (!muteClicked) {
             setVolume(0)
@@ -87,9 +103,9 @@ function Player({ musicList, audioRef, currentSongId, showPreview, setShowPrevie
             </div>
             <div className='player__container'>
                 <div className="player__controls">
-                    <i className="fa-solid fa-backward-step"></i>
+                    <i className="fa-solid fa-backward-step" onClick={handlePreviousSongButton}></i>
                     {isPlaying ? <i className="fa-solid fa-pause" onClick={handlePlay}></i> : <i className="fa-solid fa-play" onClick={handlePlay}></i>}
-                    <i className="fa-solid fa-step-forward"></i>
+                    <i className="fa-solid fa-step-forward" onClick={handleNextButton}></i>
                     <div className='player__controls-duration'>
                         <span>{formatTime(currentTime)}</span> / <span>{duration ? formatTime(duration) : '0:00'}</span>
                     </div>
