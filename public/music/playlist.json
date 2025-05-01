@@ -1,135 +1,198 @@
 [
-    {
-      "id": 1,
-      "title": "anoちゅ多様性Music Video",
-      "artist": "ano",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5780b88f7f286b5dee1e241d2bca5d0f/0x1900-000000-80-0-0.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 2,
-      "title": "Aquarium Park (Act 1) - Sonic Colors [OST]",
-      "artist": "Artista B",
-      "cover": "https://i1.sndcdn.com/artworks-000271732910-66gc2u-t500x500.jpg",
-      "genre": "Electronic"
-    },
-    {
-      "id": 3,
-      "title": "Caravan Palace - Aftermath",
-      "artist": "Caravan Palace",
-      "cover": "https://i.ytimg.com/vi/imCd-m32oAs/mqdefault.jpg",
-      "genre": "Electronic"
-    },
-    {
-      "id": 4,
-      "title": "Kyary Pamyu Pamyu - Kimino Mikata(きゃりーぱみゅぱみゅ - きみのみかた) Official Music Video",
-      "artist": "Kyary Pamyu Pamyu",
-      "cover": "https://i.ytimg.com/vi/TWxrIblJHO0/maxresdefault.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 5,
-      "title": "Kyary Pamyu Pamyu - OTO NO KUNI Official Music Video",
-      "artist": "Kyary Pamyu Pamyu",
-      "cover": "https://nexusstudios.com/app/uploads/2020/10/NexusStudios_OtoNoKuni_FantasistaUtamaro_Stiils_6.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 6,
-      "title": "Moe Shop - Fantasy (w MONICO)",
-      "artist": "Moe Shop",
-      "cover": "https://i1.sndcdn.com/artworks-000316901838-oqxutn-t500x500.jpg",
-      "genre": "Electronic"
-    },
-    {
-      "id": 7,
-      "title": "The Music",
-      "artist": "Capsule",
-      "cover": "https://images.genius.com/494a4de01841564a20500a129ec5e8f8.998x1000x1.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 8,
-      "title": "kyary pamyu pamyu - Mondai Girl(きゃりーぱみゅぱみゅ - もんだいガール) Official Music Video",
-      "artist": "Kyary Pamyu Pamyu",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/5cd42ba596c9878764ed428c075791e4/0x1900-000000-80-0-0.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 9,
-      "title": "Stay with You",
-      "artist": "Capsule",
-      "cover": "https://www.generasia.com/w/images/thumb/6/63/CAPSULE_WAVERUNNER.jpg/250px-CAPSULE_WAVERUNNER.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 10,
-      "title": "[Official Music Video] Perfumelove the world",
-      "artist": "Perfume",
-      "cover": "https://upload.wikimedia.org/wikipedia/en/e/e5/Lovetheworld.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 11,
-      "title": "anoスマイルあげないMusic Video",
-      "artist": "ano",
-      "cover": "https://i.ytimg.com/vi/cc4wxTFtwkk/maxresdefault.jpg",
-      "genre": "J-POP"
-    }, 
-    {
-      "id": 12,
-      "title": "Space Telephone",
-      "artist": "Perfume",
-      "cover": "https://i.ytimg.com/vi/UC0MONDSCuE/maxresdefault.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 13,
-      "title": "チェリーボンボン - Cherrybonbon",
-      "artist": "Kyary Pamyu Pamyu",
-      "cover": "https://i1.sndcdn.com/artworks-7dKWnHnjQvTh-0-t500x500.jpg",
-      "genre": "J-POP"
-    },
-    {
-      "id": 14,
-      "title": "meganeko - Milkshake (Official Audio)",
-      "artist": "Meganeko",
-      "cover": "https://i1.sndcdn.com/artworks-000108284674-yaxljg-t500x500.jpg",
-      "genre": "Electronic"
-    },
-    {
-      "id": 15,
-      "title": "Kyary Pamyu Pamyu - KAMAITACHI(きゃりーぱみゅぱみゅ - かまいたち) Official Music Video",
-      "artist": "Kyary Pamyu Pamyu",
-      "cover": "https://i.scdn.co/image/ab67616d0000b273963b45085a47e5aa00487a0f",
-      "genre": "J-POP"
-    },
-    {
-      "id": 16,
-      "title": "A Toybox Filled With Raindrops  Flups",
-      "artist": "Flups",
-      "cover": "https://i.ytimg.com/vi/rIvlZM-6qmc/sddefault.jpg",
-      "genre": "Electronic"
-    },
-    {
-      "id": 17,
-      "title": "Oliver Tree & Robin Schulz - Miss You [Official Music Video]",
-      "artist": "Oliver Tree",
-      "cover": "https://i1.sndcdn.com/artworks-s22bKHiAvsVUeNDi-TIS5Yw-t500x500.jpg",
-      "genre": "Electronic"
-    }, 
-    {
-      "id": 18,
-      "title": "Bouquet",
-      "artist": "Ujico*/Snail's House",
-      "cover": "https://i.scdn.co/image/ab67616d0000b273f449c9046c57cfc740bcff35",
-      "genre": "Electronic"
-    }, 
-    {
-      "id": 19,
-      "title": "Dua Lipa - Dance The Night  [Official Music Video]",
-      "artist": "Dua Lipa",
-      "cover": "https://i.ytimg.com/vi/T2C2UL8zsO0/maxresdefault.jpg",
-      "genre": "Pop"
-    } 
-  ]
+  {
+    "id": 1,
+    "title": "anoちゅ多様性Music Video",
+    "artist": "ano",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/5780b88f7f286b5dee1e241d2bca5d0f/0x1900-000000-80-0-0.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 2,
+    "title": "Aquarium Park (Act 1) - Sonic Colors [OST]",
+    "artist": "Artista B",
+    "cover": "https://i1.sndcdn.com/artworks-000271732910-66gc2u-t500x500.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 3,
+    "title": "Caravan Palace - Aftermath",
+    "artist": "Caravan Palace",
+    "cover": "https://i.ytimg.com/vi/imCd-m32oAs/mqdefault.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 4,
+    "title": "Kyary Pamyu Pamyu - Kimino Mikata(きゃりーぱみゅぱみゅ - きみのみかた) Official Music Video",
+    "artist": "Kyary Pamyu Pamyu",
+    "cover": "https://i.ytimg.com/vi/TWxrIblJHO0/maxresdefault.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 5,
+    "title": "Kyary Pamyu Pamyu - OTO NO KUNI Official Music Video",
+    "artist": "Kyary Pamyu Pamyu",
+    "cover": "https://nexusstudios.com/app/uploads/2020/10/NexusStudios_OtoNoKuni_FantasistaUtamaro_Stiils_6.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 6,
+    "title": "Moe Shop - Fantasy (w MONICO)",
+    "artist": "Moe Shop",
+    "cover": "https://i1.sndcdn.com/artworks-000316901838-oqxutn-t500x500.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 7,
+    "title": "The Music",
+    "artist": "Capsule",
+    "cover": "https://images.genius.com/494a4de01841564a20500a129ec5e8f8.998x1000x1.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 8,
+    "title": "kyary pamyu pamyu - Mondai Girl(きゃりーぱみゅぱみゅ - もんだいガール) Official Music Video",
+    "artist": "Kyary Pamyu Pamyu",
+    "cover": "https://cdn-images.dzcdn.net/images/cover/5cd42ba596c9878764ed428c075791e4/0x1900-000000-80-0-0.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 9,
+    "title": "Stay with You",
+    "artist": "Capsule",
+    "cover": "https://www.generasia.com/w/images/thumb/6/63/CAPSULE_WAVERUNNER.jpg/250px-CAPSULE_WAVERUNNER.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 10,
+    "title": "[Official Music Video] Perfumelove the world",
+    "artist": "Perfume",
+    "cover": "https://upload.wikimedia.org/wikipedia/en/e/e5/Lovetheworld.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 11,
+    "title": "anoスマイルあげないMusic Video",
+    "artist": "ano",
+    "cover": "https://i.ytimg.com/vi/cc4wxTFtwkk/maxresdefault.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 12,
+    "title": "Space Telephone",
+    "artist": "Perfume",
+    "cover": "https://i.ytimg.com/vi/UC0MONDSCuE/maxresdefault.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 13,
+    "title": "チェリーボンボン - Cherrybonbon",
+    "artist": "Kyary Pamyu Pamyu",
+    "cover": "https://i1.sndcdn.com/artworks-7dKWnHnjQvTh-0-t500x500.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 14,
+    "title": "meganeko - Milkshake (Official Audio)",
+    "artist": "Meganeko",
+    "cover": "https://i1.sndcdn.com/artworks-000108284674-yaxljg-t500x500.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 15,
+    "title": "Kyary Pamyu Pamyu - KAMAITACHI(きゃりーぱみゅぱみゅ - かまいたち) Official Music Video",
+    "artist": "Kyary Pamyu Pamyu",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273963b45085a47e5aa00487a0f",
+    "genre": "J-POP"
+  },
+  {
+    "id": 16,
+    "title": "A Toybox Filled With Raindrops  Flups",
+    "artist": "Flups",
+    "cover": "https://i.ytimg.com/vi/rIvlZM-6qmc/sddefault.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 17,
+    "title": "Oliver Tree & Robin Schulz - Miss You [Official Music Video]",
+    "artist": "Oliver Tree",
+    "cover": "https://i1.sndcdn.com/artworks-s22bKHiAvsVUeNDi-TIS5Yw-t500x500.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 18,
+    "title": "Bouquet",
+    "artist": "Ujico*/Snail's House",
+    "cover": "https://i.scdn.co/image/ab67616d0000b273f449c9046c57cfc740bcff35",
+    "genre": "Electronic"
+  },
+  {
+    "id": 19,
+    "title": "Dua Lipa - Dance The Night  [Official Music Video]",
+    "artist": "Dua Lipa",
+    "cover": "https://i.ytimg.com/vi/T2C2UL8zsO0/maxresdefault.jpg",
+    "genre": "Pop"
+  },
+  {
+    "id": 20,
+    "title": "Re_Re",
+    "artist": "ASIAN KUNG-FU GENERATION",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2731ad7b6eb6b0410e10402edeb",
+    "genre": "J-POP"
+  },
+  {
+    "id": 21,
+    "title": "PSYQUI - Are You Kidding Me (ft. Mami)",
+    "artist": "PSYQUI",
+    "cover": "https://i.ytimg.com/vi/j51Kju6sN3Y/maxresdefault.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 22,
+    "title": "Main Heroine",
+    "artist": "cute girls doing cute things",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2730c90995adca53f81ca1c9bd6",
+    "genre": "Electronic"
+  },
+  {
+    "id": 23,
+    "title": "Andora - Delusion (feat. juu)",
+    "artist": "Andora",
+    "cover": "https://i.scdn.co/image/ab67616d0000b27326510689e7f59e1fe4b3f151",
+    "genre": "J-POP"
+  },
+  {
+    "id": 24,
+    "title": "dark cat - BUBBLE TEA (feat. juu _ cinders)",
+    "artist": "dark cat",
+    "cover": "https://i.scdn.co/image/ab67616d0000b2738d100113064e839c73adefd5",
+    "genre": "Electronic"
+  },
+  {
+    "id": 25,
+    "title": "fusq - Perfume",
+    "artist": "fusq",
+    "cover": "https://i1.sndcdn.com/artworks-000134141020-ocb30m-t1080x1080.jpg",
+    "genre": "Electronic"
+  },
+  {
+    "id": 26,
+    "title": "Sabrina Carpenter - Espresso (Official Video)",
+    "artist": "Sabrina Carpenter",
+    "cover": "https://m.media-amazon.com/images/M/MV5BYWM4NTJjNGQtZDhkZC00OWYxLTgzMDktZDM3NzkxMzY5MmNkXkEyXkFqcGc@._V1_.jpg",
+    "genre": "Pop"
+  },
+  {
+    "id": 27,
+    "title": "YOASOBIãç¾¤éãOfficial Music Video",
+    "artist": "YOASOBI",
+    "cover": "https://i.ytimg.com/vi/Y4nEEZwckuU/sddefault.jpg",
+    "genre": "J-POP"
+  },
+  {
+    "id": 28,
+    "title": "Don't you want me (feat. Such)",
+    "artist": "Psyqui",
+    "cover": "https://i1.sndcdn.com/artworks-000383529588-vvo3gc-t500x500.jpg",
+    "genre": "J-POP"
+  }
+]

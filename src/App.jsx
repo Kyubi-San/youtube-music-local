@@ -72,14 +72,52 @@ function App() {
     generatePlayList: generatePlayList
   }
 
+  const [musicFile, setMusicFile] = useState('')
+  const [artist, setArtist] = useState('')
+  const [genre, setGenre] = useState('')
+  const [cover, setCover] = useState('')
+
+  const handleSubmitMusic = (e) => {
+    e.preventDefault()
+    if (musicFile && genre) {
+      const formData = new FormData()
+      formData.append('musicFile', musicFile)
+      formData.append('artist', artist)
+      formData.append('genre', genre)
+      formData.append('cover', cover)
+  
+      fetch('http://localhost:3000/uploadMusic', {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+    } else {
+      console.log('chamo')
+    }
+  }
+
   return (
     <>
       <div className='container'>
         <header className='header'>
           <i className="fa-solid fa-bars"></i>
           <div className='header__search'>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             <input type="text" name="" id="" className='header__searchbar' placeholder="Buscar canciones, álbumes, artistas o podcasts"/>
+            <form action="" onSubmit={handleSubmitMusic} className='addMusicForm'>
+              <input type="file" name="" accept=".mp3" id="" onChange={(e) => {setMusicFile(e.target.files[0])}}/>
+              <input type="text" name="artist" id="artist" value={artist} onChange={(e) => {setArtist(e.target.value)}} placeholder='artista'/>
+              <input type="text" name="cover" id="cover" value={cover} onChange={(e) => {setCover(e.target.value)}} placeholder='cover'/>
+              <select name="" id="" onChange={(e) => {setGenre(e.target.value)}}>
+                <option value="" selected disabled>Selecciona un genero</option>
+                <option value="Electronic">Electronic</option>
+                <option value="J-POP">J-POP</option>
+                <option value="Pop">Pop</option>
+              </select>
+              <button>Enviar</button>
+            </form>
           </div>
         </header>
         <aside className='sidebar'>
@@ -135,6 +173,27 @@ function App() {
             <div className='music-list' ref={musicListRef}>
               {
               musicList.slice(0, 10).map((val) => {
+                return (
+                  <MusicCard key={val.id} id={val.id} title={val.title} artist={val.artist} cover={val.cover} href={val.title} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying} generatePlayList={generatePlayList} currentSong={currentSong} setCurrentSong={setCurrentSong} musicList={musicList}/>
+                )
+              })
+              }             
+            </div>
+          </section>
+          <section className='listen-again'>
+            <div className='listen-again__description'>
+              <div className='listen-again__description-title'>
+                <h2>Tus favoritos</h2>
+              </div>
+              <div className='listen-again__description-buttons'>
+                <span onClick={handleDeployPreview}>mas</span>
+                <i className="fa-solid fa-chevron-left" onClick={handleScrollLeft}></i>
+                <i className="fa-solid fa-chevron-right" onClick={handleScrollRight}></i>
+              </div>
+            </div>
+            <div className='music-list'>
+              {
+              musicList.slice(10, 20).map((val) => {
                 return (
                   <MusicCard key={val.id} id={val.id} title={val.title} artist={val.artist} cover={val.cover} href={val.title} audioRef={audioRef} setShowPreview={setShowPreview} isPlaying={isPlaying} setIsPlaying={setIsPlaying} generatePlayList={generatePlayList} currentSong={currentSong} setCurrentSong={setCurrentSong} musicList={musicList}/>
                 )

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import PlaylistItem from "./PlaylistItem"
 
-function Preview({  musicListFiltered, currentSong, playlistIndex, setPlaylistIndex, setShowPreview, showPreview, currentSongId, setCurrentSongId, audioRef, isPlaying, setIsPlaying, setCurrentSong }) {
+function Preview({  musicListFiltered, currentSong, playlistIndex, setPlaylistIndex, setShowPreview, showPreview, audioRef, isPlaying, setIsPlaying, setCurrentSong }) {
 
     const audio = audioRef.current
 
@@ -15,13 +15,13 @@ function Preview({  musicListFiltered, currentSong, playlistIndex, setPlaylistIn
     const handleSongEnd = () => {
         const nextIndex = (playlistIndex + 1) % musicListFiltered.length
         audio.src = `../music/${musicListFiltered[nextIndex].title}.mp3`
-        setCurrentSongId(musicListFiltered[nextIndex].id)
+        setCurrentSong(musicListFiltered[nextIndex])
         setPlaylistIndex(nextIndex)
         audio.play()
     }
     
     const handlePlay = () => {
-        if (currentSongId !== null) {
+        if (currentSong !== null) {
             if (isPlaying) {
                 audioRef.current.pause()
             } else {
@@ -42,8 +42,8 @@ function Preview({  musicListFiltered, currentSong, playlistIndex, setPlaylistIn
             </div>
             <div className="preview__playlist">
                 <div className="preview__playlist-option">
-                    <span>A continuacion</span>
-                    <span>Similares</span>
+                    <span className="preview__playlist-options preview__playlist-option--selected">A continuacion</span>
+                    <span className="preview__playlist-options">Similares</span>
                 </div>
                 <ul className="preview__playlist-next">
                 {

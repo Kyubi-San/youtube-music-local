@@ -35,7 +35,7 @@ function Player({ musicListFiltered, playlistIndex, setPlaylistIndex, setShowPre
     }
 
     const handlePlay = () => {
-        if (currentSongId !== null) {
+        if (currentSong !== null) {
             if (isPlaying) {
                 audioRef.current.pause()
             } else {
